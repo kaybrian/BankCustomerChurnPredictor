@@ -3,10 +3,13 @@ from fastapi import FastAPI, UploadFile, File, HTTPException
 from fastapi.responses import FileResponse
 from pydantic import BaseModel
 import pandas as pd
-from .src.prediction import MakePredictions
-from .src.model import LoanDefaultPredictor
-from .src.preprocessing import DataPreprocessor
+from src.prediction import MakePredictions
+from src.model import LoanDefaultPredictor
+from src.preprocessing import DataPreprocessor
+from fastapi.middleware.cors import CORSMiddleware
+import sys
 
+# make a new app
 app = FastAPI()
 
 # Directories
@@ -110,3 +113,19 @@ def make_prediction(input: PredictionInput):
         return {"predictions": predictions.tolist()}
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
+
+origins = [
+    "http://localhost",
+    "http://localhost:8080",
+    "https://bankcustomerchurnpredictor.onrender.com"
+]
+
+
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
