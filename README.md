@@ -96,6 +96,33 @@ This project uses the following models: The models have been trained on the bank
 - _BankCustomerChurnPredictor.tf
 
 
+## Frontend
+The frontend of the project is built with Next.js, a React framework. The frontend provides the following features:
+- **Data Loading**: Load training and testing datasets.
+- **Model Training**: Train the Random Forest model on the provided datasets.
+- **Model Evaluation**: Evaluate the model using accuracy, classification report, and confusion matrix.
+- **Model Retraining**: Retrain the model via an API endpoint.
+- **Visualizations**: Display evaluation metrics and confusion matrix.
+- **Predictions**: Make predictions on new data.
+
+
+## Technologies
+The project uses the following technologies:
+- **Frontend**: Next.js, React
+- **Backend**: Python, FastAPI
+- **Machine Learning**: scikit-learn, TensorFlow
+- **Visualization**: Matplotlib, Seaborn
+
+
+## Frontend Link to the repository
+[BankCustomerChurnPredictor](https://github.com/kaybrian/churn-prediction.git)
+
+
+## live link to the project
+[BankCustomerChurnPredictor](https://churn-prediction-two.vercel.app/)
+
+
+
 ## Author
 
 - [Kayongo Johnson Brian](https://github.com/kaybrian)
