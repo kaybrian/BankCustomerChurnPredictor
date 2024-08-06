@@ -118,6 +118,8 @@ origins = [
     "http://localhost",
     "http://localhost:8080",
     "https://bankcustomerchurnpredictor.onrender.com"
+    "http://localhost:3000",
+    "https://churn-prediction-two.vercel.app",
 ]
 
 
