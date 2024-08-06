@@ -115,10 +115,10 @@ def make_prediction(input: PredictionInput):
         raise HTTPException(status_code=500, detail=str(e))
 
 origins = [
+    "http://localhost:3000",
     "http://localhost",
     "http://localhost:8080",
     "https://bankcustomerchurnpredictor.onrender.com"
-    "http://localhost:3000",
     "https://churn-prediction-two.vercel.app",
 ]
 
@@ -127,7 +127,7 @@ origins = [
 app.add_middleware(
     CORSMiddleware,
     allow_origins=origins,
-    allow_credentials=True,
+    allow_credentials=False,
     allow_methods=["*"],
     allow_headers=["*"],
 )
